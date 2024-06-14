@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+@font-face {
+    font-family: Open Sans;
+    src: url(assets/OpenSans/OpenSans-Italic-VariableFont_wdthwght.ttf) format("truetype");
+    src: url(assets/OpenSans/OpenSans-VariableFont_wdthwght.ttf) format("truetype");
+}
+
+html {
+    font-family: Open Sans !important;
+}
