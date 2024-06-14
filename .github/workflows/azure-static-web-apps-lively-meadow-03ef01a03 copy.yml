@@ -21,6 +21,7 @@ jobs:
                   lfs: false
 
             - name: Setup Chrome
+              id: setup-chrome
               # You may pin to the exact commit or the version.
               # uses: browser-actions/setup-chrome@db1b524c26f20a8d1a10f7fc385c92387e2d0477
               uses: browser-actions/setup-chrome@v1.7.1
