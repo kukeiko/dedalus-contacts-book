@@ -8,7 +8,7 @@ import { Contact } from "../../models";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactDetailViewComponent {
-    @Input() contact?: Contact;
+    @Input() contact?: Contact | null;
 
     get fullName(): string {
         return this.contact ? `${this.contact.surname.toUpperCase()} ${this.contact.name}` : "";

@@ -1,5 +1,5 @@
-<contact-list class="flex-1" [contacts]="contacts" (select)="selectContact($event)"></contact-list>
+<contact-list class="flex-1" [contacts]="contacts$ | async" (select)="selectContact($event)"></contact-list>
 <section class="flex-1 flex-column overflow-auto">
     <contact-create-form class="flex-1" (create)="addContact($event)"></contact-create-form>
-    <contact-detail-view class="flex-1" [contact]="selectedContact"></contact-detail-view>
+    <contact-detail-view class="flex-1" [contact]="selectedContact$ | async"></contact-detail-view>
 </section>

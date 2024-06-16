@@ -14,7 +14,7 @@ export class ContactCreateFormComponent implements OnInit {
 
     contact!: Contact;
     @Output() create = new EventEmitter<Contact>();
-    @ViewChild(NgForm) form!: NgForm;
+    @ViewChild(NgForm) form?: NgForm;
 
     ngOnInit(): void {
         this.contact = this.contactService.createEmpty();
@@ -23,6 +23,6 @@ export class ContactCreateFormComponent implements OnInit {
     onCreateClick(): void {
         this.create.next(this.contact);
         this.contact = this.contactService.createEmpty();
-        this.form.resetForm();
+        this.form?.resetForm();
     }
 }

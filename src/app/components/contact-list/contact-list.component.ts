@@ -8,7 +8,7 @@ import { Contact } from "../../models";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactListComponent {
-    @Input() contacts: Contact[] = [];
+    @Input() contacts: Contact[] | null = [];
     @Output() select = new EventEmitter<Contact>();
 
     trackContact(contact: Contact): number {

@@ -1,6 +1,6 @@
 <p-card header="Contacts">
     <p-table
-        [value]="contacts"
+        [value]="contacts ?? []"
         [scrollable]="true"
         [paginator]="true"
         [rows]="25"
