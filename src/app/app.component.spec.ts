@@ -1,14 +1,16 @@
 import { TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
+import { CardModule } from "primeng/card";
 import { TableModule } from "primeng/table";
 import { AppComponent } from "./app.component";
+import { ContactDetailViewComponent } from "./components/contact-detail-view/contact-detail-view.component";
 import { ContactListComponent } from "./components/contact-list/contact-list.component";
 
 describe("AppComponent", () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [RouterTestingModule, TableModule],
-            declarations: [AppComponent, ContactListComponent],
+            imports: [RouterTestingModule, TableModule, CardModule],
+            declarations: [AppComponent, ContactListComponent, ContactDetailViewComponent],
         }).compileComponents();
     });
 

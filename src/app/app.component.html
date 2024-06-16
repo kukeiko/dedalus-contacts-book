@@ -1,3 +1,6 @@
 <h1>{{ title }}</h1>
-<contact-list [contacts]="contacts"></contact-list>
+<div class="flex">
+    <contact-list class="flex-1" [contacts]="contacts" (select)="selectContact($event)"></contact-list>
+    <contact-detail-view class="flex-1" [contact]="selectedContact"></contact-detail-view>
+</div>
 <router-outlet />

@@ -11,9 +11,14 @@ export class AppComponent implements OnInit {
     title = "dedalus-contacts-book";
     contacts: Contact[] = [];
     nextContactId = 1;
+    selectedContact?: Contact;
 
     ngOnInit(): void {
         this.contacts = this.generateContacts(100);
+    }
+
+    selectContact(contact: Contact): void {
+        this.selectedContact = contact;
     }
 
     generateContacts(quantity: number): Contact[] {
