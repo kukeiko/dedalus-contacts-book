@@ -1,4 +1,4 @@
-<p-card *ngIf="contact; else notice" [header]="fullName">
+<p-card *ngIf="contact" [header]="fullName">
     <p>
         <label for="name">Name:</label>
         <span id="name">{{ contact.name }}</span>
@@ -20,6 +20,3 @@
         <span id="address">{{ contact.address }}</span>
     </p>
 </p-card>
-<ng-template #notice>
-    <div class="flex-1 text-center" id="no-contact-selected">Please select a contact</div>
-</ng-template>
