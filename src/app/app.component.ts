@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Contact } from "./models";
-import { faker } from "@faker-js/faker";
+import { ContactService } from "./services";
 
 @Component({
     selector: "app-root",
@@ -8,29 +8,18 @@ import { faker } from "@faker-js/faker";
     styleUrl: "./app.component.scss",
 })
 export class AppComponent implements OnInit {
+    constructor(private readonly contactService: ContactService) {}
+
     title = "dedalus-contacts-book";
     contacts: Contact[] = [];
     nextContactId = 1;
     selectedContact?: Contact;
 
     ngOnInit(): void {
-        this.contacts = this.generateContacts(100);
+        this.contacts = this.contactService.generateContacts(100);
     }
 
     selectContact(contact: Contact): void {
         this.selectedContact = contact;
-    }
-
-    generateContacts(quantity: number): Contact[] {
-        return Array(quantity)
-            .fill(0)
-            .map<Contact>(() => ({
-                id: this.nextContactId++,
-                address: faker.location.streetAddress(),
-                email: faker.internet.email(),
-                name: faker.person.firstName(),
-                phone: faker.phone.number(),
-                surname: faker.person.lastName(),
-            }));
     }
 }
