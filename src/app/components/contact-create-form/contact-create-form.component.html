@@ -1,0 +1,25 @@
+<p-card header="Add Contact">
+    <form class="flex flex-column gap-2">
+        <div class="flex flex-column gap-2">
+            <label for="name">Name (*)</label>
+            <input pInputText id="name" name="name" [(ngModel)]="contact.name" required />
+        </div>
+        <div class="flex flex-column gap-2">
+            <label for="surname">Surname (*)</label>
+            <input pInputText id="surname" name="surname" [(ngModel)]="contact.surname" required />
+        </div>
+        <div class="flex flex-column gap-2">
+            <label for="surname">Email (*)</label>
+            <input pInputText id="email" name="email" [(ngModel)]="contact.email" required />
+        </div>
+        <div class="flex flex-column gap-2">
+            <label for="phone">Phone</label>
+            <input pInputText id="phone" name="phone" [(ngModel)]="contact.phone" />
+        </div>
+        <div class="flex flex-column gap-2">
+            <label for="address">Address</label>
+            <input pInputText id="address" name="address" [(ngModel)]="contact.address" />
+        </div>
+        <p-button (click)="onCreateClick()" [disabled]="!form?.valid">Create</p-button>
+    </form>
+</p-card>

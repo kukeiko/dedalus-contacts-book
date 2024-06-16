@@ -1,6 +1,9 @@
 <h1>{{ title }}</h1>
 <div class="flex">
     <contact-list class="flex-1" [contacts]="contacts" (select)="selectContact($event)"></contact-list>
-    <contact-detail-view class="flex-1" [contact]="selectedContact"></contact-detail-view>
+    <section class="flex-1 flex-column">
+        <contact-create-form class="flex-1" (create)="addContact($event)"></contact-create-form>
+        <contact-detail-view class="flex-1" [contact]="selectedContact"></contact-detail-view>
+    </section>
 </div>
 <router-outlet />

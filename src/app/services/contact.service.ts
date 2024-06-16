@@ -6,6 +6,10 @@ import { faker } from "@faker-js/faker";
 export class ContactService {
     private nextContactId = 1;
 
+    createEmpty(): Contact {
+        return { address: "", email: "", id: 0, name: "", phone: "", surname: "" };
+    }
+
     generateContacts(quantity: number): Contact[] {
         return Array(quantity)
             .fill(0)

@@ -22,4 +22,8 @@ export class AppComponent implements OnInit {
     selectContact(contact: Contact): void {
         this.selectedContact = contact;
     }
+
+    addContact(contact: Contact): void {
+        this.contacts = [contact, ...this.contacts];
+    }
 }

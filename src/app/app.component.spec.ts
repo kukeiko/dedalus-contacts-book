@@ -1,16 +1,20 @@
 import { TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
+import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { TableModule } from "primeng/table";
 import { AppComponent } from "./app.component";
 import { ContactDetailViewComponent } from "./components/contact-detail-view/contact-detail-view.component";
 import { ContactListComponent } from "./components/contact-list/contact-list.component";
+import { InputTextModule } from "primeng/inputtext";
+import { FormsModule } from "@angular/forms";
+import { ContactCreateFormComponent } from "./components/contact-create-form/contact-create-form.component";
 
 describe("AppComponent", () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [RouterTestingModule, TableModule, CardModule],
-            declarations: [AppComponent, ContactListComponent, ContactDetailViewComponent],
+            imports: [RouterTestingModule, FormsModule, TableModule, CardModule, ButtonModule, InputTextModule],
+            declarations: [AppComponent, ContactListComponent, ContactDetailViewComponent, ContactCreateFormComponent],
         }).compileComponents();
     });
 
