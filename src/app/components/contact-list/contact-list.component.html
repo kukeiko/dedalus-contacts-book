@@ -1,0 +1,24 @@
+<p-table
+    [value]="contacts"
+    [scrollable]="true"
+    [paginator]="true"
+    [rows]="25"
+    [rowsPerPageOptions]="[25, 50, 100]"
+    scrollHeight="flex"
+    styleClass="p-datatable-striped p-datatable-sm"
+    [rowHover]="true"
+    [rowTrackBy]="trackContact"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th class="name">Name</th>
+            <th class="name">Surname</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-contact>
+        <tr (click)="select.next(contact)">
+            <td class="name">{{ contact.name }}</td>
+            <td class="name">{{ contact.surname }}</td>
+        </tr>
+    </ng-template>
+</p-table>
