@@ -10,7 +10,6 @@ import { ContactService } from "./services";
 export class AppComponent implements OnInit {
     constructor(private readonly contactService: ContactService) {}
 
-    title = "dedalus-contacts-book";
     contacts: Contact[] = [];
     nextContactId = 1;
     selectedContact?: Contact;

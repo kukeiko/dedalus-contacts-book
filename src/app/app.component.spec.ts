@@ -1,14 +1,14 @@
 import { TestBed } from "@angular/core/testing";
+import { FormsModule } from "@angular/forms";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
+import { InputTextModule } from "primeng/inputtext";
 import { TableModule } from "primeng/table";
 import { AppComponent } from "./app.component";
+import { ContactCreateFormComponent } from "./components/contact-create-form/contact-create-form.component";
 import { ContactDetailViewComponent } from "./components/contact-detail-view/contact-detail-view.component";
 import { ContactListComponent } from "./components/contact-list/contact-list.component";
-import { InputTextModule } from "primeng/inputtext";
-import { FormsModule } from "@angular/forms";
-import { ContactCreateFormComponent } from "./components/contact-create-form/contact-create-form.component";
 
 describe("AppComponent", () => {
     beforeEach(async () => {
@@ -22,18 +22,5 @@ describe("AppComponent", () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
         expect(app).toBeTruthy();
-    });
-
-    it(`should have as title 'dedalus-contacts-book'`, () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.componentInstance;
-        expect(app.title).toEqual("dedalus-contacts-book");
-    });
-
-    it("should render title", () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector("h1")?.textContent).toContain("dedalus-contacts-book");
     });
 });
