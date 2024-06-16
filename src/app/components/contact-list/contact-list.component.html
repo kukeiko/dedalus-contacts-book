@@ -9,6 +9,10 @@
         styleClass="p-datatable-striped p-datatable-sm"
         [rowHover]="true"
         [rowTrackBy]="trackContact"
+        selectionMode="single"
+        [selection]="selectedContact"
+        (selectionChange)="select.next($event)"
+        dataKey="id"
     >
         <ng-template pTemplate="header">
             <tr>
@@ -17,7 +21,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-contact>
-            <tr (click)="select.next(contact)">
+            <tr [pSelectableRow]="contact">
                 <td class="name">{{ contact.name }}</td>
                 <td class="name">{{ contact.surname }}</td>
             </tr>

@@ -9,6 +9,7 @@ import { Contact } from "../../models";
 })
 export class ContactListComponent {
     @Input() contacts: Contact[] | null = [];
+    @Input() selectedContact?: Contact | null;
     @Output() select = new EventEmitter<Contact>();
 
     trackContact(contact: Contact): number {
