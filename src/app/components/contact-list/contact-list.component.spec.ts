@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-
-import { ContactListComponent } from "./contact-list.component";
+import { CardModule } from "primeng/card";
 import { TableModule } from "primeng/table";
+import { ContactListComponent } from "./contact-list.component";
 
 describe("ContactListComponent", () => {
     let component: ContactListComponent;
@@ -9,7 +9,7 @@ describe("ContactListComponent", () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [TableModule],
+            imports: [TableModule, CardModule],
             declarations: [ContactListComponent],
         }).compileComponents();
 

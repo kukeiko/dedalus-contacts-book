@@ -10,3 +10,26 @@
 html {
     font-family: Open Sans !important;
 }
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* primeng customizations */
+.p-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.p-card-body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.p-card-content {
+    overflow: auto;
+}
