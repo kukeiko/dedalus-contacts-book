@@ -7,7 +7,7 @@ export class ContactService {
     private nextContactId = 1;
 
     createEmpty(): Contact {
-        return { address: "", email: "", id: 0, name: "", phone: "", surname: "" };
+        return { address: "", email: "", id: this.nextContactId++, name: "", phone: "", surname: "" };
     }
 
     generateContacts(quantity: number): Contact[] {
