@@ -21,10 +21,9 @@ jobs:
                   submodules: true
                   lfs: false
 
+            # required to run the test in the "Run Tests" step
             - name: 📦 Setup Chrome
               id: setup-chrome
-              # You may pin to the exact commit or the version.
-              # uses: browser-actions/setup-chrome@db1b524c26f20a8d1a10f7fc385c92387e2d0477
               uses: browser-actions/setup-chrome@v1.7.1
               with:
                   chrome-version: stable
@@ -37,9 +36,11 @@ jobs:
             - name: 📦 Install Dependencies
               run: npm install
 
+            # runs an npm script dedicated for this workflow - runs once & uses ChromeHeadless
             - name: 🧪 Run Tests
               run: npm run test:ci
 
+            # uploads the app to azure using static web app style, as all we need is a server serving files
             - name: 🛠️ Build & Deploy 🚢
               id: builddeploy
               uses: Azure/static-web-apps-deploy@v1
