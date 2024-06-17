@@ -10,10 +10,11 @@ export class ContactService {
     }
 
     generateContacts(quantity: number): Contact[] {
+        let nextId = 1;
         return Array(quantity)
             .fill(0)
             .map<Contact>(() => ({
-                id: 0,
+                id: nextId++,
                 address: faker.location.streetAddress(),
                 email: faker.internet.email(),
                 name: faker.person.firstName(),
