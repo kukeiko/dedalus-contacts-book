@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
@@ -12,7 +13,7 @@ import { AppComponent } from "./app.component";
 import { ContactCreateFormComponent } from "./components/contact-create-form/contact-create-form.component";
 import { ContactDetailViewComponent } from "./components/contact-detail-view/contact-detail-view.component";
 import { ContactListComponent } from "./components/contact-list/contact-list.component";
-import { contactsReducer } from "./state";
+import { ContactEffects, contactsReducer } from "./state";
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import { contactsReducer } from "./state";
             },
             {}
         ),
+        EffectsModule.forRoot([ContactEffects]),
     ],
     declarations: [AppComponent, ContactListComponent, ContactDetailViewComponent, ContactCreateFormComponent],
     providers: [],

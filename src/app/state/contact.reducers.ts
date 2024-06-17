@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Contact } from "../models";
-import { addContact, selectContact } from "./contact.actions";
+import { addContact, loadContactsSuccess, selectContact } from "./contact.actions";
 
 export type ContactsState = { all: Contact[]; selected?: Contact; nextId: number };
 
@@ -20,5 +20,6 @@ export const contactsReducer = createReducer(
             all: [...state.all, { ...contact, id: nextId }],
         };
     }),
-    on(selectContact, (state, { contact }) => ({ ...state, selected: contact }))
+    on(selectContact, (state, { contact }) => ({ ...state, selected: contact })),
+    on(loadContactsSuccess, (state, { contacts }) => ({ ...state, all: contacts }))
 );

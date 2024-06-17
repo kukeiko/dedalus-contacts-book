@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { faker } from "@faker-js/faker";
+import { Observable, of } from "rxjs";
 import { Contact } from "../models";
 
 @Injectable({ providedIn: "root" })
@@ -19,5 +20,11 @@ export class ContactService {
                 phone: faker.phone.number(),
                 surname: faker.person.lastName(),
             }));
+    }
+
+    getContacts$(): Observable<Contact[]> {
+        const generatedContacts = this.generateContacts(100);
+
+        return of(generatedContacts);
     }
 }
