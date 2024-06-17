@@ -22,10 +22,10 @@ describe("AppComponent", () => {
         {
             name: "Susi",
             surname: "Sonne",
-            address: "",
-            email: "",
+            address: "Sonnenallee 3",
+            email: "susi@sonne.at",
             id: 1,
-            phone: "",
+            phone: "123 456",
         },
     ];
     let contactService: ContactService;
@@ -90,10 +90,22 @@ describe("AppComponent", () => {
         const tableRows = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll("tbody tr"));
         tableRows[0].dispatchEvent(new Event("click"));
         fixture.detectChanges();
-        expect((fixture.nativeElement as HTMLElement).querySelector("label[for=name] + span")?.textContent).toEqual(testContacts[0].name);
-        expect((fixture.nativeElement as HTMLElement).querySelector("label[for=surname] + span")?.textContent).toEqual(testContacts[0].surname);
-        expect((fixture.nativeElement as HTMLElement).querySelector("label[for=email] + span")?.textContent).toEqual(testContacts[0].email);
-        expect((fixture.nativeElement as HTMLElement).querySelector("label[for=phone] + span")?.textContent).toEqual(testContacts[0].phone);
-        expect((fixture.nativeElement as HTMLElement).querySelector("label[for=address] + span")?.textContent).toEqual(testContacts[0].address);
+        const testedContact = testContacts[0];
+
+        function getDetailViewField(property: string): HTMLElement {
+            const element = (fixture.nativeElement as HTMLElement).querySelector(`label[for=${property}] + span`) as HTMLElement;
+
+            if (!element) {
+                throw new Error(`did not find detail view field for property ${property}`);
+            }
+
+            return element;
+        }
+
+        expect(getDetailViewField("name").textContent).toEqual(testedContact.name);
+        expect(getDetailViewField("surname").textContent).toEqual(testedContact.surname);
+        expect(getDetailViewField("email").textContent).toEqual(testedContact.email);
+        expect(getDetailViewField("phone").textContent).toEqual(testedContact.phone);
+        expect(getDetailViewField("address").textContent).toEqual(testedContact.address);
     });
 });
