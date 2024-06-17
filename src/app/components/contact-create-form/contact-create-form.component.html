@@ -20,6 +20,6 @@
             <label for="address">Address</label>
             <input pInputText id="address" name="address" [(ngModel)]="contact.address" />
         </div>
-        <p-button (click)="onCreateClick()" [disabled]="!form?.valid">Create</p-button>
+        <p-button id="create-contact" (click)="onCreateClick()" [disabled]="!form?.valid">Create</p-button>
     </form>
 </p-card>

@@ -17,13 +17,13 @@
         <ng-template pTemplate="header">
             <tr>
                 <th class="name">Name</th>
-                <th class="name">Surname</th>
+                <th class="surname">Surname</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-contact>
             <tr [pSelectableRow]="contact">
                 <td class="name">{{ contact.name }}</td>
-                <td class="name">{{ contact.surname }}</td>
+                <td class="surname">{{ contact.surname }}</td>
             </tr>
         </ng-template>
     </p-table>

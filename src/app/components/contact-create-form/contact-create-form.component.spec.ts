@@ -4,21 +4,7 @@ import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { InputTextModule } from "primeng/inputtext";
 import { ContactCreateFormComponent } from "./contact-create-form.component";
-
-function getNamedInputElement(fixture: ComponentFixture<any>, name: string): HTMLInputElement {
-    const element = (fixture.nativeElement as HTMLElement).querySelector<HTMLInputElement>(`input[name=${name}]`);
-
-    if (!element) {
-        throw new Error(`input element w/ name ${name} not found`);
-    }
-
-    return element;
-}
-
-function simulateInput(element: HTMLInputElement, value: string): void {
-    element.value = value;
-    element.dispatchEvent(new Event("input"));
-}
+import { getNamedInputElement, simulateInput } from "../../testing";
 
 describe("ContactCreateFormComponent", () => {
     let component: ContactCreateFormComponent;
