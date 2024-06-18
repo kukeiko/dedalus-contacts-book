@@ -82,8 +82,8 @@ describe("AppComponent", () => {
         const tableRows = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll("tbody tr"));
 
         // assert
-        expect(tableRows[tableRows.length - 1].querySelector("td.name")?.textContent).toEqual("foo");
-        expect(tableRows[tableRows.length - 1].querySelector("td.surname")?.textContent).toEqual("bar");
+        expect(tableRows[0].querySelector("td.name")?.textContent).toEqual("foo");
+        expect(tableRows[0].querySelector("td.surname")?.textContent).toEqual("bar");
     });
 
     it("should show details of selected contact", () => {

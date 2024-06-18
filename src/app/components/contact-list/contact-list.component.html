@@ -1,6 +1,6 @@
 <p-card header="Contacts">
     <p-table
-        [value]="contacts ?? []"
+        [value]="(contacts ?? []).slice()"
         [scrollable]="true"
         [paginator]="true"
         [rows]="25"
@@ -13,6 +13,7 @@
         [selection]="selectedContact"
         (selectionChange)="select.next($event)"
         dataKey="id"
+        sortField="name"
     >
         <ng-template pTemplate="header">
             <tr>
